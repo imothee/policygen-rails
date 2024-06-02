@@ -1,0 +1,285 @@
+<div id="policygen-tos" class="<%= @css.container_class %>">
+  <h1 class="<%= @css.h1_class %>"><%= I18n.t('tos.title') %></h1>
+  <h3 class="<%= @css.h3_class %>"><%= I18n.t('tos.last_updated', updated: @config.tos_last_updated) %></h3>
+
+  <!-- Introduction -->
+  <section class="<%= @css.section_class %>">
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.terms_notice', entity_name: @config.entity_name, entity_website: @config.entity_website) %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <% I18n.t('tos.agreement') %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <% I18n.t('tos.changes') %>
+    </p>
+    <% if !@config.under_eighteen && !@config.under_thirteen %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.age_limitation') %>
+      </p>
+    <% elsif !@config.under_thirteen %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.thirteen_limitation') %>
+      </p>
+    <% else %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.no_age_limitation') %>
+      </p>
+    <% end %>
+  </section>
+
+  <!-- Policy Sections -->
+  <section class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.title') %></h1>
+    <ol class="<%= @css.ol_class %>">
+      <% if @config.user_accounts %>
+        <li><a href="#section-user-accounts" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.user_accounts') %></a></li>
+      <% end %>
+      <% if @config.user_content %>
+        <li><a href="#section-user-content" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.user_content') %></a></li>
+      <% end %>
+      <% if @config.purchasable_goods %>
+        <li><a href="#section-purchasable-goods" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.purchasable_goods') %></a></li>
+      <% end %>
+      <% if @config.subscription %>
+        <li><a href="#section-subscriptions" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.subscriptions') %></a></li>
+      <% end %>
+      <li><a href="#section-prohibited-use" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.prohibited_use') %></a></li>
+      <li><a href="#section-termination" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.termination') %></a></li>
+      <li><a href="#section-governing-law" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.governing_law') %></a></li>
+      <li><a href="#section-disputes" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.disputes') %></a></li>
+      <li><a href="#section-availability" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.availability') %></a></li>
+      <% if @config.liability_limitation %>
+        <li><a href="#section-liability-limitation" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.liability_limitation') %></a></li>
+      <% end %>
+      <li><a href="#section-indemnfication" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.indemnification') %></a></li>
+      <li><a href="#section-contact" class="<%= @css.link_class %>"><%= I18n.t('tos.sections.contact') %></a></li>
+    </ol>
+  </section>
+
+  <!-- User Accounts -->
+  <% if @config.user_accounts %>
+    <section id="section-user-accounts" class="<%= @css.section_class %>">
+      <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.user_accounts') %></h2>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.user_accounts.overview') %>
+      </p>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.user_accounts.security') %>
+      </p>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.user_accounts.info') %>
+      </p>
+    </section>
+  <% end %>
+
+  <!-- User Content -->
+  <% if @config.user_content %>
+    <section id="section-user-content" class="<%= @css.section_class %>">
+      <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.user_content') %></h2>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.user_content.overview') %>
+      </p>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.user_content.removal') %>
+      </p>
+      <% if @config.user_content_license %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.user_content.license') %>
+        </p>
+      <% end %>
+    </section>
+  <% end %>
+
+  <!-- Purchasable Goods -->
+  <% if @config.purchasable_goods %>
+    <section id="section-purchasable-goods" class="<%= @css.section_class %>">
+      <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.purchasable_goods') %></h2>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.purchasable_goods.overview') %>
+      </p>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.purchasable_goods.payment') %>
+      </p>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.purchasable_goods.purchases') %>
+      </p>
+    </section>
+  <% end %>
+
+  <!-- Subscriptions -->
+  <% if @config.subscription %>
+    <section id="section-subscriptions" class="<%= @css.section_class %>">
+      <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.subscriptions') %></h2>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.subscriptions.overview') %>
+      </p>
+      <% if @config.free_trial %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.subscriptions.free_trial') %>
+        </p>
+      <% end %>
+      <% if @config.auto_renew %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.subscriptions.auto_renew') %>
+        </p>
+      <% end %>
+      <% if @config.refund_policy == :none %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.subscriptions.refund_none') %>
+        </p>
+      <% elsif @config.refund_policy == :full %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.subscriptions.refund_full') %>
+        </p>
+      <% elsif @config.refund_policy == :pro_rata %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.subscriptions.refund_pro_rata') %>
+        </p>
+      <% end %>
+    </section>
+  <% end %>
+
+  <!-- Prohibited Use -->
+  <section id="section-prohibited-use" class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.prohibited_use') %></h2>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.prohibited_use.overview') %>
+    </p>
+    <ul class="<%= @css.ul_class %>">
+      <% @config.prohibited_uses.each do |use| %>
+        <li class="<%= @css.body_class %>">
+          <%= I18n.t("tos.prohibited_use.#{use.to_s}") rescue use.to_s.titleize %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <!-- Termination -->
+  <section id="section-termination" class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.termination') %></h2>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.termination.overview') %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.termination.effect') %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.termination.severability') %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.termination.waiver') %>
+    </p>
+  </section>
+
+  <!-- Governing Law -->
+  <section id="section-governing-law" class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.governing_law') %></h2>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.governing_law.overview', governing_law: @config.governing_law) %>
+    </p>
+  </section>
+
+  <!-- Disputes -->
+  <section id="section-disputes" class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.disputes') %></h2>
+    <% if @config.mediation %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.disputes.mediation') %>
+      </p>
+    <% end %>
+    <% if @config.dispute_resolution == :arbitration %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.disputes.arbitration') %>
+      </p>
+    <% end %>
+    <% if @config.dispute_resolution == :litigation %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.disputes.litigation') %>
+      </p>
+    <% end %>
+  </section>
+
+  <!-- Availability -->
+  <section id="section-availability" class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.availability') %></h2>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.availability.as_is') %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.availability.maintenance') %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.availability.warranty') %>
+    </p>
+    <% if @config.service_sla %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.availability.sla') %>
+      </p>
+      <% if @config.service_sla_custom %>
+        <p class="<%= @css.body_class %>">
+          <%= @config.service_sla_custom %>
+        </p>
+      <% else %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.availability.sla_details', amount: @config.service_sla_amount, timeframe: @config.service_sla_timeframe) %>
+        </p>
+      <% end %>
+      <% if @config.service_sla_refund %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.availability.sla_refund', refund: @config.service_sla_refund_type.to_s) %>
+        </p>
+      <% end %>
+    <% end %>
+  </section>
+
+  <!-- Liability Limitation -->
+  <% if @config.liability_limitation %>
+    <section id="section-liability-limitation" class="<%= @css.section_class %>">
+      <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.liability_limitation') %></h2>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.liability_limitation.overview') %>
+      </p>
+      <% if @config.liability_limitation_type == :amount_paid %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.liability_limitation.amount_paid', timeframe: @config.liability_limitation_timeframe) %>
+        </p>
+      <% elsif @config.liability_limitation_type == :amount %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.liability_limitation.amount', amount: @config.liability_limitation_amount) %>
+        </p>
+      <% elsif @config.liability_limitation_type == :min_amount_paid_or_amount %>
+        <p class="<%= @css.body_class %>">
+          <%= I18n.t('tos.liability_limitation.min_amount_paid_or_amount', timeframe: @config.liability_limitation_timeframe, amount: @config.liability_limitation_amount) %>
+        </p>
+      <% end %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.liability_limitation.exceptions') %>
+      </p>
+    </section>
+  <% end %>
+
+  <!-- Indemnification -->
+  <section id="section-indemnification" class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.indemnification') %></h2>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.indemnification.overview') %>
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="section-contact" class="<%= @css.section_class %>">
+    <h2 class="<%= @css.h2_class %>"><%= I18n.t('tos.sections.contact') %></h2>
+    <p class="<%= @css.body_class %>">
+      <%= I18n.t('tos.contact.text', support_email: @config.support_email, class: @css.link_class) %>
+    </p>
+    <p class="<%= @css.body_class %>">
+      <%= @config.entity_name %>
+    </p>
+    <% if @config.entity_address %>
+      <p class="<%= @css.body_class %>">
+        <%= I18n.t('tos.contact.address', entity_address: @config.entity_address) %>
+      </p>
+    <% end %>
+  </section>
+</div>
