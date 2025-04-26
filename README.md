@@ -1,5 +1,13 @@
 # Policygen
 
+## Archived
+
+This repo has been archived in favor of [Policygen CLI](https://policygen.xyz)
+
+The CLI tool is much more efficient than mounting a rails engine and simpler to keep up to date. We encourage everyone using policygen to migrate.
+
+## History
+
 Policygen helps you setup and publish Privacy Policies and Terms of Service policies to your site with ease.
 Simply set your config in the initializer and we'll do the hard work for you.
 
